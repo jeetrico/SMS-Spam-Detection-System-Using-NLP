@@ -92,7 +92,7 @@ prediction = model.predict(vectorized_text)
 
 print("SPAM" if prediction == 1 else "HAM")
 ```
-
+![Image](https://github.com/user-attachments/assets/2ce58340-bc48-4d69-b76e-312c6b2deed9)
 ---
 
 ## **📈 Insights from the Data**  
