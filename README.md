@@ -67,7 +67,7 @@ The code uses and tests the dataset on MultinomialNB, a variant of Naive Bayes t
 
 1.  Open new Code on Colab.
 2.  Import
-3.    \```python
+
 from joblib import load
 import nltk
 from nltk.stem import PorterStemmer
@@ -110,5 +110,3 @@ while True:
         print("Prediction: SPAM")
     else:
         print("Prediction: HAM")
-
-  \```
