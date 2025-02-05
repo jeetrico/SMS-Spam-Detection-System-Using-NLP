@@ -67,3 +67,48 @@ The code uses and tests the dataset on MultinomialNB, a variant of Naive Bayes t
 
 1.  Open new Code on Colab.
 2.  Import
+3.    \```python
+from joblib import load
+import nltk
+from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
+import string
+from sklearn.feature_extraction.text import TfidfVectorizer
+#Importing Library to use
+ps = PorterStemmer()
+#Loading dependecies, should already be done here
+
+def transform_text(text):
+    """Converts text to lowercase, tokenizes, removes special characters, stopwords, and punctuation, and applies stemming."""
+    if not isinstance(text, str):
+        return ""  # Handle non-string input
+    text = text.lower()
+    tokens = nltk.word_tokenize(text)
+    alphanumeric_tokens = [token for token in tokens if token.isalnum()]
+    filtered_tokens = [token for token in alphanumeric_tokens if token not in stopwords.words('english') and token not in string.punctuation]
+    stemmer = PorterStemmer()
+    stemmed_tokens = [stemmer.stem(token) for token in filtered_tokens]
+    return " ".join(stemmed_tokens)
+
+try:
+    mnb = load('spam_model.joblib') #load the model
+    tfidf = load('tfidf_vectorizer.joblib') #load the encoder
+    print("Model and vectorizer loaded successfully!")
+except FileNotFoundError as e:
+    print(f"Error loading model or vectorizer: {e}. Make sure the files are in the same directory as the script.")
+    exit() #stop program
+
+while True:
+    sms_input = input("Enter an SMS message (or type 'exit' to quit): ")
+    if sms_input.lower() == 'exit':
+        break
+    processed_text = transform_text(sms_input)
+    vectorized_text = tfidf.transform([processed_text])
+    prediction = mnb.predict(vectorized_text)[0]
+
+    if prediction == 1:
+        print("Prediction: SPAM")
+    else:
+        print("Prediction: HAM")
+
+  \```
