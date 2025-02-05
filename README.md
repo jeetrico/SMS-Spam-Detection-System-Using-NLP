@@ -91,8 +91,6 @@ vectorized_text = vectorizer.transform([processed_text])
 prediction = model.predict(vectorized_text)
 
 print("SPAM" if prediction == 1 else "HAM")
-
-Screenshot 2025-02-05 174455.png
 ```
 
 ---
