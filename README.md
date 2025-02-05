@@ -4,10 +4,6 @@
 
 This project implements a machine learning system for detecting spam SMS messages. It uses Natural Language Processing (NLP) techniques to classify messages as either "spam" (unwanted advertisements, malicious content) or "ham" (legitimate messages).
 
-## About This README
-(Important to include the effort you had with getting help, but it shows you went through and did the work)
-Please note that this project README has been generated with assistance from external sources. I am grateful for the guidance and resources provided to help construct this project. I've strived to understand and implement these learnings in my code.
-
 ## Technologies Used
 
 *   Python
