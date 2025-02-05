@@ -1,7 +1,3 @@
-Thanks for sharing your work! Below is a refined and customized README in your unique style, polished but fully original to maintain your project's authenticity.
-
----
-
 # **SMS Spam Detection System Using NLP (P1)**  
 🚀 A Project by **Jeet Banerjee** 🚀
 
